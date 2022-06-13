@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move image</title>
+</head>
+<body>
+    <img src="1655125008799.jpg" id="train" alt="train" width="50%" height="50%"/>
+    <center><p>Click the below button to move the image right</p>
+    <button type="button" onclick="movement()">CLICK ME</button></center>
+    <script>
+        let a=20;
+        function movement(){
+            let moveImage = document.getElementById("train").style.marginLeft=a+"px";
+            a+=20;
+        }
+    </script>
+</body>
+<style>
+    img{
+        margin-left: 20px;
+        position: relative;
+    }
+    .movementCSS{
+       margin-left: 40px;
+    }
+</style>
+</html>
