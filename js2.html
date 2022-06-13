@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div class="header"></div>
+        <section id="container">
+            <ul>
+                <li class="first">First</li>
+                <li class="second">Second</li>
+                <li class="third">Third</li>
+            </ul>
+            <ol>
+                <li class="first">First</li>
+                <li class="second">Second</li>
+                <li class="third">Third</li>    
+            </ol>
+        </section>
+        <div class="footer"></div>
+    </body>
+    <script>
+        let container=document.querySelector("container");
+        console.log("section");
+        
+        let selectionId=document.querySelector("#container")
+        console.log(selectionId)
+
+        let allSecond = document.querySelectorAll('.second')
+        console.log(allSecond)
+
+        let thirdInside01 = document.querySelectorAll('ul > .third')
+        console.log(thirdInside01)
+
+        let sectionContainer = document.getElementById('container')
+        console.log(sectionContainer)
+        sectionContainer.innerHTML = 'Hello'
+
+        let mainToDiv = document.getElementsByClassName('footer')
+        console.log(mainToDiv)
+        console.log(mainToDiv[0].classList)
+        mainToDiv[0].classList.add('main')
+        console.log(mainToDiv[0].classList)
+
+        mainToDiv.classList.remove('main')
+        console.log(mainToDiv[0].classList)
+
+        let newLine = document.querySelector('ul')
+        console.log(newLine)
+        let element= document.createElement('li')
+        element.innerHTML = 'Four'
+        console.log(element)
+        newLine.appendChild(element)
+
+        let liElement = document.querySelectorAll('li')
+        console.log(liIn01)
+        for(let i=0;i<liElement.length;i++)
+        {
+            liElement[i].style.backgroundcolor='red'
+        }
+
+        document.getElementsByClassName('footer')[0].remove()
+    </script>
+
+</html>
