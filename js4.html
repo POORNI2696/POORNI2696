@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <h4>Scroll the bordered text to see the effect</h4>
+    <div id="scrolltext">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis hic ea totam, ut distinctio ipsum voluptatibus in quis consequuntur alias recusandae at animi expedita aliquid ipsam cupiditate? Amet, distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat sunt ullam repellendus eveniet neque recusandae quasi dolorum quod. Autem, nisi delectus consequuntur adipisci quo quidem impedit tempore vero quos!
+    </div>
+    <script>
+        let scroll = document.getElementById("scrolltext");
+        function onScroll(){
+            scroll.style.backgroundColor  ="green";
+            scroll.style.color = "white";
+        }
+        scroll.addEventListener("scroll",onScroll);
+     </script>
+</body>
+<style>
+    div{
+        width: 200px;
+        height: 150px;
+        overflow: scroll;
+    }
+</style>
+</html>
