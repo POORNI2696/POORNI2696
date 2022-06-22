@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        .wrapper {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .timer {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+        #startBtn { background: #15ac29; }
+        #startBtn:hover { background: #128821; }
+        #stopBtn { background: #b31515; }
+        #stopBtn:hover { background: #8a1010; }
+    </style>
+    <div class="wrapper">
+        <div class="timer">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <div class="btns">
+            <button id="startBtn" onclick="startTimer()">Start</button>
+            <button id="stopBtn" onclick="stopTimer()">Stop</button>
+        </div>
+    </div>
+    <script>
+        const minutesHtml = document.querySelector('#minutes'),
+              secondsHtml = document.querySelector('#seconds')
+
+        let minutes = 0,
+            seconds = 0,
+            timer;
+
+        function changeTime() {
+            if (++seconds === 60) {
+                seconds = 0
+                if (++minutes === 60) {
+                    minutes = 0;
+                    seconds = 0
+                }
+            }
+            minutesHtml.textContent = minutes < 10 ? `0${minutes}` : minutes
+            secondsHtml.textContent = seconds < 10 ? `0${seconds}` : seconds
+        }
+        function startTimer() {
+            timer = setInterval(changeTime, 1000)
+        }
+
+        function stopTimer() {
+            clearInterval(timer)
+        }
+        </script>
+</body>
+</html>
